@@ -39,5 +39,7 @@ output: Fig of missing ratio of 3 population cotton as output file automatically
 
 ### 4 Plotting Density Of Snps On Chromosomes.r
 Usage: Rscript ./input.vcf
+
 Options: None
+
 output: Fig of density Of Snps On cotton Chromosomes as output file automatically and a table
