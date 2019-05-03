@@ -1,6 +1,6 @@
 # GWAS_script
 
-### 1 
+### 1 Visualization_sweep_region.pl
 visualization Fst and pi in cotton chrom.
 Usage: perl $0 [options]
 
@@ -14,8 +14,7 @@ Options:
 
 require R Package ggplot2 and qqman
 
-### 2 
-Snp calling from RNA seq data
+### 2 Call snp on RNA seq data
 
 Usage: perl $0 [options]
 
