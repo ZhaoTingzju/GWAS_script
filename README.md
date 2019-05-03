@@ -16,7 +16,7 @@ require R Package ggplot2 and qqman
 The version of cotton: Huyan et.al Nature genetic 2018 
 
 
-### 2 Call snp on RNA seq data
+### 2 Call snp on RNA seq data.pl
 
 Usage: perl $0 [options]
 
