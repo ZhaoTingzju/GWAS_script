@@ -43,3 +43,9 @@ Usage: Rscript ./input.vcf
 Options: None
 
 output: Fig of density Of Snps On cotton Chromosomes as output file automatically and a table
+
+
+### 5 Change_phylip_tree_name.pl
+Usage: perl Change_phylip_tree_name.pl name.txt phylip.tree
+
+
