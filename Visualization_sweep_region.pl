@@ -46,7 +46,7 @@ print OUT  'mydfD=subset(mydf,CHROM > 13)'."\n";
 print OUT  'manhattan(mydfD,chr="CHROM",bp="BIN_START",p="MEAN_FST",snp="SNP",logp=FALSE,ylab="Mean Fst",col=c("blue","red"))'."\n";
 print OUT  'dev.off()'."\n";
 print OUT  'group1$ID= paste(group1$CHROM,group1$BIN_START,sep = "_")'."\n";
-print OUT  'group2$ID= paste(group1$CHROM,group2$BIN_START,sep = "_")'."\n";
+print OUT  'group2$ID= paste(group2$CHROM,group2$BIN_START,sep = "_")'."\n";
 print OUT  'pi<-merge(group2,group2,by="ID")'."\n";
 print OUT  'mydf_for_pi=subset(pi,pi$PI.y>0 && pi$PI.x >0)'."\n";
 print OUT  'mydf_for_pi$piXY= pi$PI.x/pi$PI.y'."\n";
