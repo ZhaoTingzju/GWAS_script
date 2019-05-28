@@ -3,7 +3,7 @@ command= paste ("awk '$0!~/#/{print $0}' ",argv[1],"|cut -f 1,2 >Position.txt", 
 system(command)
 system("ls")
 
-setwd("/Users/zt/learn/00软件包/00Myscript/GWAS/Draw_snp_density")
+setwd("./")
 snps<-read.table("Position.txt",sep="\t",header=F)
 
 colnames(snps)<-c("chr","start")
