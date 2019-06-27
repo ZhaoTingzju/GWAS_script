@@ -42,7 +42,7 @@ chomp $sample_name;
 
 print SHELL "echo \"mapping\"\n";
 
-print SHELL "$star --runThreadN $thread --genomeDir $ref --readFilesIn ${sample_name}.R1.clean.fastq.gz -2 ${sample_name}.R2.clean.fastq.gz --readFilesCommand zcat --outFileNamePrefix ${sample_name}\n";
+print SHELL "$star --runThreadN $thread --genomeDir $ref --readFilesIn ${sample_name}.R1.clean.fastq.gz ${sample_name}.R2.clean.fastq.gz --readFilesCommand zcat --outFileNamePrefix ${sample_name}\n";
 print SHELL "echo \"sam2bam\"\n";
 print SHELL "$samtools sort -@ $thread -o ${sample_name}.bam ${sample_name}Aligned.out.sam && rm ${sample_name}Aligned.out.sam\n";
 print SHELL "echo \"Sort and add header\"\n";
