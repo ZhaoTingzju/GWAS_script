@@ -12,17 +12,17 @@ sub usage
         die qq/
 Usage: perl $0 [options]
 Options:
-        -gwas_result  <s> : GWAS_output_generated_from_EMMAIX 
-        Example:
+        -gwas_result  <s> : GWAS_output_generated_from_EMMAIX
+        -snp  <s> : txt containing SNP
+        -flank_region  <s> : bp The region to draw LD heatmap
+        -hmp  <S>: The snp data in HMP format
+	-gwas_result Example:
         A01:296 -0.3123129821   0.09139493916
         A01:13691   0.1903852553    0.2448494178
         A01:13719   0.09806853342   0.5357535847
-        -snp  <s> : txt containing SNP
-        Example:
+	-snp Example:
         A06:2313312321
-        -flank_region  <s> : bp The region to draw LD heatmap
-        -hmp  <S>: The snp data in HMP format
-        Example:
+	-hmp Example:
         rs# B001    B002    B003    B004    B005
         A01:296 A\/A A\/A A\/A A\/A A\/A
         A01:13691   T\/T T\/T T\/T T\/T T\/T
