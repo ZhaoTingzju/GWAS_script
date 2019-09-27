@@ -27,3 +27,61 @@ vcftools --gzvcf D12.vcf.gz --remove-indels --recode --recode-INFO-all --out D12
 vcftools --gzvcf D13.vcf.gz --remove-indels --recode --recode-INFO-all --out D13.vcf.gz_noindel&
 wait
 ## 
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A01.vcf.gz_noindel.recode.vcf > A01_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A02.vcf.gz_noindel.recode.vcf > A02_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A03.vcf.gz_noindel.recode.vcf > A03_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A04.vcf.gz_noindel.recode.vcf > A04_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A05.vcf.gz_noindel.recode.vcf > A05_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A06.vcf.gz_noindel.recode.vcf > A06_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A07.vcf.gz_noindel.recode.vcf > A07_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A08.vcf.gz_noindel.recode.vcf > A08_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A09.vcf.gz_noindel.recode.vcf > A09_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A10.vcf.gz_noindel.recode.vcf > A10_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A11.vcf.gz_noindel.recode.vcf > A11_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A12.vcf.gz_noindel.recode.vcf > A12_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' A13.vcf.gz_noindel.recode.vcf > A13_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D01.vcf.gz_noindel.recode.vcf > D01_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D02.vcf.gz_noindel.recode.vcf > D02_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D03.vcf.gz_noindel.recode.vcf > D03_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D04.vcf.gz_noindel.recode.vcf > D04_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D05.vcf.gz_noindel.recode.vcf > D05_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D06.vcf.gz_noindel.recode.vcf > D06_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D07.vcf.gz_noindel.recode.vcf > D07_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D08.vcf.gz_noindel.recode.vcf > D08_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D09.vcf.gz_noindel.recode.vcf > D09_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D10.vcf.gz_noindel.recode.vcf > D10_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D11.vcf.gz_noindel.recode.vcf > D11_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D12.vcf.gz_noindel.recode.vcf > D12_noindel.recode.vcf_biallelic.vcf&
+awk '$5 !~ /([[:alpha:]])+,[[:alpha:]]/{print}' D13.vcf.gz_noindel.recode.vcf > D13_noindel.recode.vcf_biallelic.vcf&
+wait
+
+### merge
+~/biosoftware/gatk-4.1.0.0/gatk GatherVcfs  \
+-I A01_noindel.recode.vcf_biallelic.vcf \
+-I A02_noindel.recode.vcf_biallelic.vcf \
+-I A03_noindel.recode.vcf_biallelic.vcf \
+-I A04_noindel.recode.vcf_biallelic.vcf \
+-I A05_noindel.recode.vcf_biallelic.vcf \
+-I A06_noindel.recode.vcf_biallelic.vcf \
+-I A07_noindel.recode.vcf_biallelic.vcf \
+-I A08_noindel.recode.vcf_biallelic.vcf \
+-I A09_noindel.recode.vcf_biallelic.vcf \
+-I A10_noindel.recode.vcf_biallelic.vcf \
+-I A11_noindel.recode.vcf_biallelic.vcf \
+-I A12_noindel.recode.vcf_biallelic.vcf \
+-I A13_noindel.recode.vcf_biallelic.vcf \
+-I D01_noindel.recode.vcf_biallelic.vcf \
+-I D02_noindel.recode.vcf_biallelic.vcf \
+-I D03_noindel.recode.vcf_biallelic.vcf \
+-I D04_noindel.recode.vcf_biallelic.vcf \
+-I D05_noindel.recode.vcf_biallelic.vcf \
+-I D06_noindel.recode.vcf_biallelic.vcf \
+-I D07_noindel.recode.vcf_biallelic.vcf \
+-I D08_noindel.recode.vcf_biallelic.vcf \
+-I D09_noindel.recode.vcf_biallelic.vcf \
+-I D10_noindel.recode.vcf_biallelic.vcf \
+-I D11_noindel.recode.vcf_biallelic.vcf \
+-I D12_noindel.recode.vcf_biallelic.vcf \
+-I D13_noindel.recode.vcf_biallelic.vcf \
+-O merge.vcf 
+
