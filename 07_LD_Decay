@@ -1,0 +1,7 @@
+nohup PopLDdecay -InVCF ../merged_437_maf5maxmaf95maxmissing9.recode.vcf -SubPop ../Gb_id.txt -OutStat Gb.stat.txt -MaxDist 500 -MAF 0.05 &
+nohup PopLDdecay -InVCF ../merged_437_maf5maxmaf95maxmissing9.recode.vcf -SubPop ../GhC_id.txt -OutStat GhC.stat.txt -MaxDist 500 -MAF 0.05 &
+nohup PopLDdecay -InVCF ../merged_437_maf5maxmaf95maxmissing9.recode.vcf -SubPop ../GhW_id.txt -OutStat GhW.stat.txt -MaxDist 500 -MAF 0.05 &
+
+ehco "./wild.stat.txt.gz wild" > list.txt
+ehco "./cultivation.stat.txt.gz cultivation" >> list.txt
+perl Plot_MultiPop.pl -inList list.txt -output LD -keepR -maxX 600 -bin1 1000 -bin2 1000 -break 1000
