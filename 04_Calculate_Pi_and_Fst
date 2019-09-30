@@ -1,0 +1,14 @@
+## Calculate Pi
+ls *vcf|while read id; do vcftools --vcf $id --window-pi 50000 --window-pi-step 50000 --out ${id}.pi;done
+
+ls *pi|while read id; do echo $id;awk '{ sum += $5; } END { print "sum = " sum; print "average = " sum/NR }' $id;done
+
+## Calculate Fst
+
+vcftools --vcf merged_437_maf5maxmaf95maxmissing9.recode.vcf --weir-fst-pop Gb_id.txt --weir-fst-pop GhW_id.txt --fst-window-size 50000 --fst-window-step 50000 --out GbvsGhW.fst
+vcftools --vcf merged_437_maf5maxmaf95maxmissing9.recode.vcf --weir-fst-pop Gb_id.txt --weir-fst-pop GhC_id.txt --fst-window-size 50000 --fst-window-step 50000 --out GbvsGhC.fst
+vcftools --vcf merged_437_maf5maxmaf95maxmissing9.recode.vcf --weir-fst-pop GhW_id.txt --weir-fst-pop GhC_id.txt --fst-window-size 50000 --fst-window-step 50000 --out GhCvsGhW.fst
+ls *fst|while read id; do echo $id;awk '{ sum += $5; } END { print "sum = " sum; print "average = " sum/NR }' $id;done
+
+
+
