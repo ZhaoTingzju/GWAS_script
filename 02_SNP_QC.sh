@@ -90,4 +90,4 @@ awk '$5< 0.5{print $1}' out.imss > id.txt
 vcftools --vcf merge.vcf --keep id.txt --recode --recode-INFO-all --out merged_437
 
 nohup vcftools --vcf ./merged_437.recode.vcf --maf 0.05 --max-maf 0.95 --max-missing 0.9 \
---out merged_437_maf5maxmaf95maxmissing9 &
+--out merged_437_maf5maxmaf95maxmissing9 --recode --recode-INFO-all &
